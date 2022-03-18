@@ -1,0 +1,35 @@
+.home{
+    flex: 4;
+}
+.from{
+    display: flex;
+}
+.size{
+    width: 400px;
+   /* margin-left: 15px; */
+}
+.size2{
+    width: 400px;
+    margin-left: 15px;
+}
+.size3{
+    width: 830px;
+
+}
+.heading{
+    margin-left: 25px;
+    color: rgba(255, 0, 0, 0.692);
+}
+.search{
+    margin-left: 180px;
+}
+.searchbtn{
+    width: 500px;
+    margin-bottom: 25px;
+}
+.add{
+    margin-left: 715px;
+}
+.addbtn{
+    width: 130px;
+}
