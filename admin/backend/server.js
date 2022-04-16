@@ -32,10 +32,12 @@ connection.once("open",() => {
 
 //Routers Connection
 const serviceRouter=require("./routes/addservice");
+const employeeRouter = require("./routes/employee");
 
 
 //Routers
 app.use("/service",serviceRouter)
+app.use("/employee",employeeRouter);
 
 //Run on port
 app.listen(PORT, () => {
