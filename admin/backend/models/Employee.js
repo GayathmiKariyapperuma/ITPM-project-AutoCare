@@ -4,10 +4,7 @@ const Schema = mongoose.Schema;
 
 const add_employee = new Schema({
     
-    employeeno : {
-        type : Number,
-        required: true,
-    },
+
     name : {
         type : String,
         required: true,
@@ -29,10 +26,6 @@ const add_employee = new Schema({
         required: true,
     },
     email : {
-        type : String,
-        required: true,
-    },
-    jobtitle : {
         type : String,
         required: true,
     },

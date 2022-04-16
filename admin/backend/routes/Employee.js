@@ -3,7 +3,7 @@ let Employee = require("../models/Employee");
 
 router.route("/addemployee").post((req,res)=>{
     
-    const employeeno = req.body.employeeno;
+    
     const name = req.body.name;
     const age = req.body.age;
     const phoneno = req.body.phoneno;
@@ -14,7 +14,7 @@ router.route("/addemployee").post((req,res)=>{
     
 
     const newEmployee = new Employee({
-        employeeno,
+        
         name,
         age,
         phoneno,
