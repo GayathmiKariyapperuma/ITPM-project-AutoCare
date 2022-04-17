@@ -4,6 +4,7 @@ import './App.css';
 import Home from "./pages/home/Home";
 import Addservice from "./pages/addservices/Addservices";
 import Addsupplier from "./pages/addsupplier/Addsupplier";
+import SDetails from "./pages/supplierdetails/SDetails";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
@@ -24,9 +25,12 @@ function App() {
           <Addservice/>
           </Route>
 
-          {/*Services and Work Progess*/}
+          {/*Supplier and Inventory*/}
          <Route exact path="/addsupplier">
           <Addsupplier/>
+          </Route>
+          <Route exact path="/supplierdetails">
+            <SDetails/>
           </Route>
 
        </Switch>
