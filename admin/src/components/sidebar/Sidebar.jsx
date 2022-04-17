@@ -128,7 +128,7 @@ export default function Sidebar() {
               Place Order
             </li>
             </Link>
-            <Link to="/" className="link">
+            <Link to="/supplierdetails" className="link">
             <li className="sidebarListItem">
               <Report className="sidebarIcon" />
               Details
