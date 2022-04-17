@@ -109,22 +109,31 @@ export default function Sidebar() {
         <div className="sidebarMenu">
           <h3 className="sidebarTitle">Supplier & Inventory Management</h3>
           <ul className="sidebarList">
+
+            <Link to="/addsupplier" className="link">
             <li className="sidebarListItem">
               <WorkOutline className="sidebarIcon" />
               Add Supplier
             </li>
+            </Link>
+            <Link to="/" className="link">
             <li className="sidebarListItem">
               <Timeline className="sidebarIcon" />
               Add Stocks
             </li>
+            </Link>
+            <Link to="/" className="link">
             <li className="sidebarListItem">
               <WorkOutline className="sidebarIcon" />
               Place Order
             </li>
+            </Link>
+            <Link to="/" className="link">
             <li className="sidebarListItem">
               <Report className="sidebarIcon" />
               Details
             </li>
+            </Link>
             <Link to="/" className="link">
             <li className="sidebarListItem">
               <BarChart className="sidebarIcon" />
