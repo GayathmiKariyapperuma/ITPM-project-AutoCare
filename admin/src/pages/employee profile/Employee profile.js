@@ -83,7 +83,7 @@ export default function Employeeprofile(){
       </thead>
     </table>
     <div className="btn1">
-    <Link to={`/update/proflie/${worker.nic}`}>
+    <Link to={`/employee/profile/update/${worker._id}`}>
     <Button variant="contained" color="primary" className="btn11">Update User Details</Button>
     </Link>
     </div>
