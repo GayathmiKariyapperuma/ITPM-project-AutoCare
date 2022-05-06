@@ -33,11 +33,16 @@ connection.once("open",() => {
 //Routers Connection
 const serviceRouter=require("./routes/addservice");
 const employeeRouter = require("./routes/employee");
+const staffallowance=require("./routes/addallowance");
+const staffpaysalary=require("./routes/paysalary");
 
 
 //Routers
 app.use("/service",serviceRouter)
 app.use("/employee",employeeRouter);
+
+app.use("/staffallowance",staffallowance)
+app.use("/staffpaysalary",staffpaysalary)
 
 //Run on port
 app.listen(PORT, () => {

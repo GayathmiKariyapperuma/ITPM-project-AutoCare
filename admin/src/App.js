@@ -7,6 +7,7 @@ import Addemployees from "./pages/addemployee/addemployees";
 import Viewemployee from "./pages/view employees/View employee";
 import Employeeprofile from "./pages/employee profile/Employee profile";
 import Updateemployee from "./pages/updateemployee/Updateenployee";
+import Employeeallowance from "./pages/employeeallowance/Employeeallowance";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
@@ -48,6 +49,10 @@ function App() {
 
           <Route exact path="/employee/profile/update/:id">
           <Updateemployee/>
+          </Route>
+
+          <Route exact path="/allowance/:id">
+          <Employeeallowance/>
           </Route>
 
        </Switch>
