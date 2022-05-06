@@ -4,6 +4,7 @@ import './App.css';
 import Home from "./pages/home/Home";
 import Addservice from "./pages/addservices/Addservices";
 import Addemployees from "./pages/addemployee/addemployees";
+import Viewemployee from "./pages/view employees/View employee";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
@@ -30,9 +31,13 @@ function App() {
 
 
 
-
+          {/* Employee & Finance Management*/}
           <Route exact path="/addemployee">
           <Addemployees/>
+          </Route>
+
+          <Route exact path="/viewemployees">
+          <Viewemployee/>
           </Route>
 
        </Switch>

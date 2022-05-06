@@ -92,10 +92,10 @@ export default function Sidebar() {
                 Add Employee
               </li>
             </Link>
-            <Link to="/" className="link">
+            <Link to="/viewemployees" className="link">
               <li className="sidebarListItem">
                 <Timeline className="sidebarIcon" />
-                View Payments
+                View Employees
               </li>
             </Link>
             <Link to="/" className="link">
