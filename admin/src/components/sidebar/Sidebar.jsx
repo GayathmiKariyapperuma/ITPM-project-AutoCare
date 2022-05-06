@@ -86,16 +86,16 @@ export default function Sidebar() {
           <h3 className="sidebarTitle">Employee & Finance Management</h3>
           <ul className="sidebarList">
 
-            <Link to="/" className="link">
+            <Link to="/addemployee" className="link">
               <li className="sidebarListItem">
                 <WorkOutline className="sidebarIcon" />
                 Add Employee
               </li>
             </Link>
-            <Link to="/" className="link">
+            <Link to="/viewemployees" className="link">
               <li className="sidebarListItem">
                 <Timeline className="sidebarIcon" />
-                View Payments
+                View Employees
               </li>
             </Link>
             <Link to="/" className="link">
