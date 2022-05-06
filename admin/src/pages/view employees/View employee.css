@@ -52,7 +52,7 @@ element.style {
 .w-fulln {
     width: 100%;
 }
-img, video {
+/* img, video {
     max-width: 100%;
     height: auto;
 }
@@ -61,7 +61,7 @@ audio, canvas, embed, iframe, img, object, svg, video {
 }
 img {
     border-style: solid;
-}
+} */
 .text-centern {
     text-align: center;
 }

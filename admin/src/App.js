@@ -1,8 +1,18 @@
 import Topbar from "./components/topbar/Topbar";
 import Sidebar from "./components/sidebar/Sidebar";
 import './App.css';
+import { useState } from "react";
 import Home from "./pages/home/Home";
 import Addservice from "./pages/addservices/Addservices";
+import Workprogress from "./pages/workprogess/Workprogress";
+import Pendingpage from "./pages/pending page/Pendingpage";
+import Inprogress from "./pages/Inprogress page/InprogressPage";
+import Startservice from "./pages/start service/Startservice";
+import Finishpage from "./pages/finish page/Finishpage";
+import Editpage from "./pages/Edit Page/Editpage";
+import Deletepage from "./pages/delete page/Deletepage";
+import Editordeletepage from "./pages/Edit or delete page/Edit or delete page";
+import Sreportpage from "./pages/service report page/Sreportpage";
 import Addemployees from "./pages/addemployee/addemployees";
 import Viewemployee from "./pages/view employees/View employee";
 import Employeeprofile from "./pages/employee profile/Employee profile";
@@ -12,6 +22,7 @@ import Employeepaysalary from "./pages/paysalary/Employeepaysalary";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
+  const [search, setSearch] = useState("");
   return (
     <Router>
       <Topbar />
@@ -29,10 +40,41 @@ function App() {
           <Addservice/>
           </Route>
 
+          <Route exact path="/workprogress">
+          <Workprogress/>
+          </Route>
 
+          <Route exact path="/workprogress/pendingservices">
+          <Pendingpage setSearch={setSearch} search={search}/>
+          </Route>
 
+          <Route exact path="/workprogress/startservice/:id">
+          <Startservice/>
+          </Route>
+          
+          <Route exact path="/workprogress/inprogressservices">
+          <Inprogress setSearch={setSearch} search={search}/>
+          </Route>
 
+          <Route exact path="/workprogress/finishservices">
+          <Finishpage setSearch={setSearch} search={search}/>
+          </Route>
 
+          <Route exact path="/workprogress/editordeleteservice/:id">
+          <Editordeletepage/>
+          </Route>
+
+          <Route exact path="/workprogress/editservice/:id">
+          <Editpage/>
+          </Route>
+
+          <Route exact path="/workprogress/deleteservice/:id">
+          <Deletepage/>
+          </Route>
+
+          <Route exact path="/service_report">
+          <Sreportpage setSearch={setSearch} search={search}/>
+          </Route>
 
 
           {/* Employee & Finance Management*/}

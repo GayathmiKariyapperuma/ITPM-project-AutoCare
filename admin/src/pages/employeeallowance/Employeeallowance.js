@@ -84,7 +84,7 @@ export default function Employeeallowance(){
   return(
     <div className="newstaff">
       <form className={classes.root} autoComplete="false" onSubmit={submitandler}>
-        <h1 className="topic">Empoolye Allowance</h1>
+        <h1 className="top">Empoolye Allowance</h1>
       <TextField disabled label="Empoolye Frist Name" value={name} variant="outlined" className="textbox"/>
       <TextField disabled label="Empoolye Second Name" value={age} variant="outlined" className="textbox"/><br/>
       <TextField disabled label="Empoolye NIC" value={nic} variant="outlined" className="textbox"/>
