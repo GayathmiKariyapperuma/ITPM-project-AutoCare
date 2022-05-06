@@ -1,0 +1,14 @@
+.home{
+    flex: 4;
+}
+.heading{
+    margin-left: 25px;
+    color: rgba(255, 0, 0, 0.692);
+}
+.feild{
+    display: flex;
+}
+.addbtn{
+    margin-left: 678px;
+    width: fit-content;
+}

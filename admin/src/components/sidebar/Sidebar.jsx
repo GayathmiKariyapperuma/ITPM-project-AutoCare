@@ -68,13 +68,13 @@ export default function Sidebar() {
                 Add Service
               </li>
             </Link>
-            <Link to="/" className="link">
+            <Link to="/workprogress" className="link">
               <li className="sidebarListItem">
                 <DynamicFeed className="sidebarIcon" />
                 View Work Progress
               </li>
             </Link>
-            <Link to="/" className="link">
+            <Link to="/service_report" className="link">
               <li className="sidebarListItem">
                 <BarChart className="sidebarIcon" />
                 Reports

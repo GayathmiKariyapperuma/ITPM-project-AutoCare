@@ -1,9 +1,13 @@
 const router = require("express").Router();
-let Service = require("../models/addServicemodel");
+let Pending = require("../models/addServicemodel");
+let Inprogress = require("../models/inprogressService");
+let Finish = require("../models/finishService");
+let Done = require("../models/done");
+
 let details = require("../models/addv");
 
 
-//Database data insert
+//Pending Service Part Apis
 router.route("/addservice").post((req,res)=>{
 
     const name = req.body.fname;
@@ -14,7 +18,7 @@ router.route("/addservice").post((req,res)=>{
     const cnumber =Number(req.body.cnumber);
     const addinfo = req.body.addinfo;
     
-    const newservice = new Service({
+    const newservice = new Pending({
         name,
         nic,
         vnumber,
@@ -31,7 +35,6 @@ router.route("/addservice").post((req,res)=>{
     
 })
 
-//Database data view all
 router.route("/").get((req,res)=>{
 
     details.find().then((curds)=>{
@@ -39,6 +42,174 @@ router.route("/").get((req,res)=>{
     }).catch((err)=>{
         console.log(err);
     })
+})
+
+router.route("/pending").get((req,res)=>{
+
+    Pending.find().then((curds)=>{
+        res.json(curds)
+    }).catch((err)=>{
+        console.log(err);
+    })
+})
+
+router.route("/pending/:id").get((req,res)=>{
+    let id=req.params.id
+
+    Pending.findById({_id:id}).then((curds)=>{
+        res.json(curds)
+    }).catch((err)=>{
+        console.log(err);
+    })
+
+})
+
+router.route("/pending/edit/:id").put(async (req,res)=>{
+    
+    let id=req.params.id
+    
+    const stype = req.body.stype;
+    const addinfo = req.body.addinfo;
+
+
+    const updatedetails ={
+        stype,
+        addinfo,
+    }
+    const update = await Pending.findOneAndUpdate({_id:id},updatedetails).then(()=>{
+        res.status(200).send({status: "Service updated!!"})
+    }).catch((err)=>{
+        res.status(500).send({status: "Service not found!!"});
+    })
+})
+
+router.route("/pending/delete/:id").delete((req,res)=>{
+    let id=req.params.id
+
+    Pending.findByIdAndDelete({_id:id}).then((curds)=>{
+        res.json(curds)
+    }).catch((err)=>{
+        console.log(err);
+    })
+})
+
+//Inprogress Service Part Apis
+router.route("/inprogress/:id").get((req,res)=>{
+    let id=req.params.id
+
+    Pending.findById({_id:id}).then((curds)=>{
+        res.json(curds)
+    }).catch((err)=>{
+        console.log(err);
+    })
+
+})
+
+router.route("/inprogress/add").post((req,res)=>{
+
+    const name = req.body.cname;
+    const nic = req.body.cnic;
+    const vnumber = req.body.vnumber;
+    const cemail = req.body.cemail;
+    const stype = req.body.stype;
+    const cnumber =Number(req.body.cnumber);
+    const ename = req.body.ename;
+    
+    const newservice = new Inprogress({
+        name,
+        nic,
+        vnumber,
+        cemail,
+        stype,
+        cnumber,
+        ename,
+    })
+        newservice.save().then(()=>{
+        res.json("inprogress service Added!!");
+    }).catch((err)=>{
+        console.log(err);
+    })
+    
+})
+
+router.route("/inprogress").get((req,res)=>{
+
+    Inprogress.find().then((curds)=>{
+        res.json(curds)
+    }).catch((err)=>{
+        console.log(err);
+    })
+})
+
+//Finish Service Part Apis
+router.route("/finish/add").post((req,res)=>{
+
+    const name = req.body.cname;
+    const nic = req.body.cnic;
+    const vnumber = req.body.vnumber;
+    const cemail = req.body.cemail;
+    const stype = req.body.stype;
+    const cnumber =Number(req.body.cnumber);
+    const ename = req.body.ename;
+    
+    const newservice = new Finish({
+        name,
+        nic,
+        vnumber,
+        cemail,
+        stype,
+        cnumber,
+        ename,
+    })
+        newservice.save().then(()=>{
+        res.json("finish service Added!!");
+    }).catch((err)=>{
+        console.log(err);
+    })
+    
+})
+
+router.route("/finish/:id").get((req,res)=>{
+    let id=req.params.id
+
+    Inprogress.findById({_id:id}).then((curds)=>{
+        res.json(curds)
+    }).catch((err)=>{
+        console.log(err);
+    })
+
+})
+
+router.route("/finish/delete/:id").delete((req,res)=>{
+    let id=req.params.id
+
+    Inprogress.findByIdAndDelete({_id:id}).then((curds)=>{
+        res.json(curds)
+    }).catch((err)=>{
+        console.log(err);
+    })
+})
+
+router.route("/finish").get((req,res)=>{
+
+    Finish.find().then((curds)=>{
+        res.json(curds)
+    }).catch((err)=>{
+        console.log(err);
+    })
+})
+
+// Done part APIs
+
+router.route("/done").get((req,res)=>{
+    let id=req.params.id
+
+    Done.find().then((curds)=>{
+        res.json(curds)
+    }).catch((err)=>{
+        console.log(err);
+    })
+
 })
 
 //Database data view nic data
