@@ -44,7 +44,7 @@ class Viewemployee extends React.Component {
           <div className="pb-6n pb-8n text-gray-600n text-centern" >
             <p className="text-smn pn">Employee NIC<br/>{user.nic}<br/></p>
             <div className="btnn">
-            <Link to={`/proflie/${user._id}`}>
+            <Link to={`/employee/profile/${user._id}`}>
             <Button variant="outlined" color="primary">More</Button>
             </Link>
             </div>

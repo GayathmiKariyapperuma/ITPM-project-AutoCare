@@ -5,6 +5,7 @@ import Home from "./pages/home/Home";
 import Addservice from "./pages/addservices/Addservices";
 import Addemployees from "./pages/addemployee/addemployees";
 import Viewemployee from "./pages/view employees/View employee";
+import Employeeprofile from "./pages/employee profile/Employee profile";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
@@ -38,6 +39,10 @@ function App() {
 
           <Route exact path="/viewemployees">
           <Viewemployee/>
+          </Route>
+
+          <Route exact path="/employee/profile/:id">
+          <Employeeprofile/>
           </Route>
 
        </Switch>

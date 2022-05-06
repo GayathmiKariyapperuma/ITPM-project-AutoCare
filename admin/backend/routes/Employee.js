@@ -40,6 +40,16 @@ router.route("/").get((req,res)=>{
     })
 })
 
+router.route("/profile/:id").get((req,res)=>{
+    let id = req.params.id;
+
+    Employee.findById({_id:id}).then((employees)=>{
+        res.json(employees)
+    }).catch((err)=>{
+        console.log(err)
+    })
+})
+
 router.route("/update/:employeeno").put(async (req,res) => {
     let no = req,params,employeeno;
 
@@ -62,10 +72,10 @@ router.route("/update/:employeeno").put(async (req,res) => {
     })
 })
 
-router.route("/delete/employeeno").delete(async (req,res) => {
-    let no = req.params.employeeno;
+router.route("/proflie/delete/:id").delete(async (req,res) => {
+    let id = req.params.id;
 
-    await Employee.findByAndDelete(Employeeno)
+    await Employee.findByIdAndDelete({_id:id})
     .then(() => {
         res.status(200).send({status: "Employee Deleted"});
     }).catch((err) => {
