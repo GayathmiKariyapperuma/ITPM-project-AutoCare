@@ -94,7 +94,7 @@ export default function Employeeallowance(){
       <div className="textboxamount">
       <FormControl className="amount" variant="outlined">
           <InputLabel>Amount</InputLabel>
-          <OutlinedInput type="number" value={amount} onChange={price} required startAdornment={<InputAdornment position="start" >Rs.</InputAdornment>} labelWidth={60}/>
+          <OutlinedInput type="number" value={amount} onChange={price} required startAdornment={<InputAdornment position="start" >Rs.</InputAdornment>} labelWidth={60}/><br/>
         </FormControl>
         </div>
         <div className="add">

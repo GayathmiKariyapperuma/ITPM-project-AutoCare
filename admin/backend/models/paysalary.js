@@ -3,11 +3,11 @@ const Schema = mongoose.Schema;
 
 const payschema = new Schema({
 
-    fname :{
+    name :{
         type: String,
         required : true,
     },
-    sname :{
+    age :{
         type: String,
         required : true,
     },
@@ -17,14 +17,6 @@ const payschema = new Schema({
     },
     nic :{
         type : String,
-        required : true,
-    },
-    position :{
-        type : String,
-        required : true,
-    },
-    type :{
-        type: String,
         required : true,
     },
     allowance :{

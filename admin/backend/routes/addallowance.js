@@ -30,10 +30,10 @@ router.route("/addallowance").post((req,res)=>{
 //view all allowance data
 router.route("/viewallowance/:nic/:date").get((req,res)=>{
 
-    let ni=req.params.nic;
+    let nic=req.params.nic;
     let da=req.params.date;
 
-    allowance.findOne({nic:ni,date:da}).then((curds)=>{
+    allowance.findOne({nic:nic,date:da}).then((curds)=>{
         res.json(curds)
     }).catch((err)=>{
         console.log(err);

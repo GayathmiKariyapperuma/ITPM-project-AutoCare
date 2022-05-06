@@ -7,24 +7,20 @@ router.route("/paysalary").post((req,res)=>{
     // let mail=req.params.email;
     // console.log(mail);
 
-    const fname = req.body.fname;
-    const sname = req.body.sname;
+    const name = req.body.name;
+    const age = req.body.age;
     const email = req.body.email;
-    const nic = req.body.NIC;
-    const position = req.body.position;
-    const type = req.body.type;
+    const nic = req.body.nic;
     const allowance =Number(req.body.allowance);
     const basicsalary =Number(req.body.basicsalary);
     const date = req.body.date;
     // const type = req.body.type;
 
     const newstaff = new paysalary({
-        fname,
-        sname,
+        name,
+        age,
         email,
         nic,
-        position,
-        type,
         allowance,
         basicsalary,
         date
