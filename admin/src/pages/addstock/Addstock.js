@@ -65,7 +65,13 @@ export default function Addstock() {
         <TextField id="quantity" name="quantity" label="Quantity" className="size" variant="outlined"  value={quantity} onChange={(e) => {setquantity(e.target.value);}} required />
         <TextField id="name" name="name" label="Item Name" className="size" variant="outlined"  value={name} onChange={(e) => {setname(e.target.value);}} required />
         <TextField id="agentName" name="agentName" label="Agent's Name" className="size" variant="outlined"  value={agentName} onChange={(e) => {setagentName(e.target.value);}} required />
-        <TextField id="category" name="category" label="Category" className="size" variant="outlined"  value={category} onChange={(e) => {setcategory(e.target.value);}} required />
+        <TextField id="category" className="category" select label="Category" value={category} onChange={(e) => {setcategory(e.target.value);}} name="category" SelectProps={{native: true,}} variant="outlined" required>
+      <option value=""></option>
+      <option value="Engine oil">Engine oil</option>
+      <option value="Tire">Tire</option>
+      <option value="Lights">Lights</option>
+      <option value="Body part">Body part</option>
+      </TextField>
         <TextField id="unitPrice" name="unitPrice" label="Unit Price" className="size" variant="outlined"  value={unitPrice} onChange={(e) => {setunitPrice(e.target.value);}} required />
         <TextField type="date" variant="outlined" label="Date" className="datebox" value={date} onChange={(e) => {setdate(e.target.value);}} required InputLabelProps={{shrink: true,}} />
         {/*<LocalizationProvider dateAdapter={AdapterDateFns}>
