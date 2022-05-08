@@ -36,7 +36,7 @@ export default function Editsupplier(){
 
       function getUsers(){
         let mounted = true;
-        fetch(`http://localhost:8070/supplier/${supplierNo}`)
+        fetch(`http://localhost:8070/supplier/get/${supplierNo}`)
         .then(res=> res.json())
         .then((result)=>{
           if(mounted){
