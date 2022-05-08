@@ -87,13 +87,12 @@ export default function Editsupplier(){
                 <TextField id="agentName" name="agentName" label="Enter Agent NAme" className="size" variant="outlined"  value={agentName} onChange={(e) => {setagentName(e.target.value);}} required />
                 <TextField id="agentEmail" className="size2" label="Enter Agent Email" value={agentEmail} onChange={(e) => {setagentEmail(e.target.value);}} name="agentEmail" variant="outlined" required/>
                 <TextField id="agentPhone" name="agentPhone" label="Enter Agent Phone no" className="size" variant="outlined"  value={agentPhone} onChange={(e) => {setagentPhone(e.target.value);}} required />
-                <TextField id="agreementDate" name="agreementDate" label="Enter Agreement Date" className="size" variant="outlined"  value={agreementDate} onChange={(e) => {setagreementDate(e.target.value);}} required />
+                <TextField id="date" name="agreementDate" label="Enter Agreement Date" className="datebox" variant="outlined"  value={agreementDate} onChange={(e) => {setagreementDate(e.target.value);}} required InputLabelProps={{shrink: true,}} />
                 <TextField id="validTime" name="validTime" label="Enter Valid Time" className="size" variant="outlined"  value={validTime} onChange={(e) => {setvalidTime(e.target.value);}} required />
                 <div className="go">
                 <Button type="submit" variant="contained" startIcon={<CloudUploadIcon />} className='btn'color="primary" > Submit </Button><br/><br/>
                 </div>
                 </form>
-
                 
         </div>
     )

@@ -77,7 +77,7 @@ return(
             <TextField id="quantity" name="quantity" label=" Enter quantity" className="size" variant="outlined"  value={quantity} onChange={(e) => {setquantity(e.target.value);}} required />
             <TextField id="agentName" name="agentName" label=" Enter Agent Name" className="size" variant="outlined"  value={agentName} onChange={(e) => {setagentName(e.target.value);}} required />
             <TextField id="unitPrice" name="unitPrice" label=" Enter Unit Price" className="size" variant="outlined"  value={unitPrice} onChange={(e) => {setunitPrice(e.target.value);}} required />
-            <TextField id="date" name="date" label=" Enter Date" className="size" variant="outlined"  value={date} onChange={(e) => {setdate(e.target.value);}} required />
+            <TextField id="date" variant="outlined" label="Enter Date" className="datebox" value={agreementDate} onChange={(e) => {setdate(e.target.value);}} required InputLabelProps={{shrink: true,}} />
             <div className="go">
             <Button type="submit" variant="contained" startIcon={<CloudUploadIcon />} className='btn'color="primary" > Submit </Button><br/><br/>
             </div>
