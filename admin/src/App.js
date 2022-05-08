@@ -41,14 +41,14 @@ function App() {
           <Route exact path="/supplierdetails">
             <SDetails/>
           </Route>
-          <Route exact path="/viewsupplier">
+          <Route exact path="/viewsupplier/Viewsupplier">
             <Vsupplier/>
+          </Route>
+          <Route exact path="/viewstock/Viewstock">
+            <Vstock/>
           </Route>
           <Route exact path="/reports">
             <Navigate/>
-          </Route>
-          <Route exact path="/viewstock">
-            <Vstock/>
           </Route>
           <Route exact path="/supplierreport/Sreport">
             <Sreport/>

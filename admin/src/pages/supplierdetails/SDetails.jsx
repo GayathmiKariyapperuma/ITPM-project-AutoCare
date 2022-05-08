@@ -11,7 +11,7 @@ export default function SDetails(){
                 <img className="icon" src={require(`./supplier.jpg`).default}/>
                     <h1 className="h3size">Supplier Management</h1>
                     <div className="content123">
-                    <Link className='link' to={`/viewsupplier`}>
+                    <Link className='link' to={`/viewsupplier/Viewsupplier`}>
                         <a className="a123">View Supplier Details</a>
                     </Link>
                     </div>
@@ -24,7 +24,7 @@ export default function SDetails(){
                 <img className="icon123" src={require(`./inventory.png`).default}/>
                     <h1 className="h3size">Inventory Management</h1>
                     <div className="content123">
-                    <Link className='link' to={`/viewstock`}>
+                    <Link className='link' to={`/viewstock/Viewstock`}>
                         <a className="a">View Stock</a>
                     </Link>
                     </div>
