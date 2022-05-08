@@ -73,7 +73,7 @@ export default function Ereportpage({search,setSearch}){
                 {/* <th>Empoolye E-mail</th> */}
                 <th>Empoolye NIC</th>
                 <th>Empoolye Allowance</th>
-                <th>Empoolye Basicsalary</th>
+                <th>Empoolye Basicsalary</th> 
                 <th>Empoolye Payment Date</th>
               </tr>
             </thead>
