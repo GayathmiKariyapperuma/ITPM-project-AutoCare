@@ -101,7 +101,7 @@ export default function Sidebar() {
                 View Employees
               </li>
             </Link>
-            <Link to="/" className="link">
+            <Link to="/salary_report" className="link">
             <li className="sidebarListItem">
               <BarChart className="sidebarIcon" />
               Reports

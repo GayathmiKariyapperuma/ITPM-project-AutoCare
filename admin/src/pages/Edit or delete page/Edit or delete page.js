@@ -27,7 +27,7 @@ export default function Editordeletepage(){
                     <h1 className="h3size">Delete Service</h1>
                     <div className="content123">
                     <Link className='link' to={`/workprogress/deleteservice/${id}`}>
-                        <a className="a">Delete</a>
+                        <a className="a321">Delete</a>
                         </Link>
                 </div>
             </div>

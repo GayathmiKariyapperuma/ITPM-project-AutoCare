@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 
-const postSchema = new mongoose.Schema({
+const Schema = mongoose.Schema;
     
-
+ const postSchema = new Schema({
  Firstname:{
         type:String,
         required:true
@@ -40,4 +40,5 @@ const postSchema = new mongoose.Schema({
 
     });
 
-module.exports =  mongoose.model('CUSTOMER', postSchema);
+const Customer = mongoose.model('CUSTOMER', postSchema);
+module.exports = Customer;
