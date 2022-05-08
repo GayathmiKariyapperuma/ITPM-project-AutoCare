@@ -53,6 +53,7 @@ router.route("/update/:supplierNo").put(async(req,res) => {
     const {supplierNo, compName, compAddress, compEmail, compPhone, agentName, agentEmail, agentPhone} =req.body;
 
     const updateSupplier = {
+        compAddress,
         compEmail,
         compPhone,
         agentName,
@@ -62,7 +63,7 @@ router.route("/update/:supplierNo").put(async(req,res) => {
 
     const update = await supplier.findOneAndUpdate({supplierNo : supplierCode}, updateSupplier)
     .then(() => {
-    res.status(200).send({status: "User Updated"})
+    res.status(200).send({status: "Supplier Updated"})
     }).catch((err) => {
         console.log(err);
         res.status(500).send({status: "Error with updating data", error: err.message});

@@ -1,10 +1,8 @@
 import React,{ useState,useEffect } from "react";
-import {useParams } from 'react-router';
 import "./Editsupplier.css"
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-import { useHistory } from "react-router-dom";
 import CloudUploadIcon from '@material-ui/icons/CloudUpload';
 
 import axios from 'axios';
@@ -18,14 +16,8 @@ const useStyles = makeStyles((theme) => ({
   }));
 
 export default function Editsupplier(){
-
-    const {id}=useParams();
     
     const classes = useStyles();
-
-    let history = useHistory();
-
-    
 
     const [supplierNo,setsupplierNo] =useState('');
     const [compName,setcompName] =useState('');
@@ -43,7 +35,6 @@ export default function Editsupplier(){
       },[])
 
       function getUsers(){
-        // useEffect(()=>{
         let mounted = true;
         fetch(`http://localhost:8070/supplier/${supplierNo}`)
         .then(res=> res.json())
@@ -60,14 +51,12 @@ export default function Editsupplier(){
             setagreemetDate(result.agreementDate)
             setvalidTime(result.validTime)
 
-        //   setCfname(result.fname)
           }
         })
          return () => mounted = false;
       }
 
       const fromhandler =(event)=>{
-        //event.preventDefault();
         const data ={supplierNo,compName,compAddress,compEmail,compPhone,agentName,agentEmail,agentPhone,agreementDate,validTime}
         
         if(data.Pnumber.length<10){
@@ -85,10 +74,6 @@ export default function Editsupplier(){
           })
         }
       }
-      
-      function back(){
-        history.push(`/supplier/${supplierNo}`)
-     }
 
     return(
         <div className="newstaff">  
@@ -98,15 +83,14 @@ export default function Editsupplier(){
                 <TextField InputProps={{readOnly: true,}} id="compName" name="compName" label="Enter Company Name" className="size" variant="outlined"  value={compName} onChange={(e) => {setcompName(e.target.value);}} required />
                 <TextField id="compAddress" name="compAddress" label="Enter Comapny Address" className="size" variant="outlined"  value={compAddress} onChange={(e) => {setcompAddress(e.target.value);}} required />
                 <TextField id="compEmail" name="compEmail" label=" Enter Company Email" className="size" variant="outlined"  value={compEmail} onChange={(e) => {setcompEmail(e.target.value);}} required />
-                <TextField InputProps={{readOnly: true,}} id="compPhone" name="compPhone" label="Enter Company Phone No" className="size" variant="outlined"  value={compPhone} onChange={(e) => {setcompPhone(e.target.value);}} required />
+                <TextField id="compPhone" name="compPhone" label="Enter Company Phone No" className="size" variant="outlined"  value={compPhone} onChange={(e) => {setcompPhone(e.target.value);}} required />
                 <TextField id="agentName" name="agentName" label="Enter Agent NAme" className="size" variant="outlined"  value={agentName} onChange={(e) => {setagentName(e.target.value);}} required />
-                <TextField InputProps={{readOnly: true,}} id="agentEmail" className="size2" label="Enter Agent Email" value={agentEmail} onChange={(e) => {setagentEmail(e.target.value);}} name="agentEmail" variant="outlined" required/>
+                <TextField id="agentEmail" className="size2" label="Enter Agent Email" value={agentEmail} onChange={(e) => {setagentEmail(e.target.value);}} name="agentEmail" variant="outlined" required/>
                 <TextField id="agentPhone" name="agentPhone" label="Enter Agent Phone no" className="size" variant="outlined"  value={agentPhone} onChange={(e) => {setagentPhone(e.target.value);}} required />
                 <TextField id="agreementDate" name="agreementDate" label="Enter Agreement Date" className="size" variant="outlined"  value={agreementDate} onChange={(e) => {setagreementDate(e.target.value);}} required />
                 <TextField id="validTime" name="validTime" label="Enter Valid Time" className="size" variant="outlined"  value={validTime} onChange={(e) => {setvalidTime(e.target.value);}} required />
                 <div className="go">
                 <Button type="submit" variant="contained" startIcon={<CloudUploadIcon />} className='btn'color="primary" > Submit </Button><br/><br/>
-                <Button variant="contained" color="primary" className='btn' onClick={back}>Back to page</Button>
                 </div>
                 </form>
 

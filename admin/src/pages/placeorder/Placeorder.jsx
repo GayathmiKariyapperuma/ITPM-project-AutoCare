@@ -19,7 +19,6 @@ export default function Placeorder({search,setSearch}){
           axios
             .get("http://localhost:8070/order")
             .then((res) => {
-            //   console.log(res);
               setorderdetails(res.data);
             })
             .catch((err) => {
