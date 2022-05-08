@@ -1,0 +1,13 @@
+.home{
+    flex: 4;
+}
+.heading{
+    margin-left: 25px;
+    color: rgba(255, 0, 0, 0.692);
+}
+.downloadpdf{
+    margin-left: 1000px;
+}
+.trn{
+    background-color: #dfdfdf;
+}

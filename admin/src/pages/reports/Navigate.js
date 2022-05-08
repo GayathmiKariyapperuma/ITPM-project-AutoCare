@@ -66,7 +66,7 @@ const useStyles = makeStyles({
           </CardContent>
         </CardActionArea>
         <CardActions className='btn'>
-        <Link className='link' to={`/`}>
+        <Link className='link' to={`/inventoryreport/Ireport`}>
           <Button color="primary" >
             View
           </Button>
