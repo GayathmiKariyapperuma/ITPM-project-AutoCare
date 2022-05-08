@@ -15,25 +15,11 @@
     border-radius: 15px;
     background: #0000001a;
     overflow: hidden;
-    /* display: flex; */
     align-items: center;
     border-top: 1px solid rgba(255, 255, 255, 0.5);
     border-left: 1px solid rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(5px);
 }
-/*
-.container1 .card123 .content123{
-    padding: 20px;
-    transform: translateY(100px);*/
-    /* margin-top: 100px; *//*
-    opacity: 0;
-    transition: 0.5s;
-}
-
-.container1 .card123:hover .content123{
-    transform: translateY(0px);
-    opacity: 1;
-}*/
 
  .icon {
     width: 225px;
