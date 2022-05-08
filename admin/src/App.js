@@ -22,6 +22,7 @@ import Employeepaysalary from "./pages/paysalary/Employeepaysalary";
 import Addcustomer from "./pages/addcustomer/Addcustomer";
 import Addvehicle from "./pages/addvehicle/Addvehicle";
 import Cusandveh from "./pages/cusandveh/cusandveh";
+import Viewcustomer from "./pages/view customer/Viewcustomer";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
@@ -118,6 +119,10 @@ function App() {
           <Cusandveh/>
           </Route>
           
+          <Route exact path="/viewcustomer">
+          <Viewcustomer/>
+          </Route>
+
        </Switch>
      </div>
     </Router>
