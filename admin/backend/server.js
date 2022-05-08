@@ -32,8 +32,8 @@ connection.once("open",() => {
 
 //Routers Connection
 const serviceRouter=require("./routes/addservice");
-const supplierRouter=require("./routes/addsupplier");
-const supplierRouter=require("./routes/addstock");
+const supplierRouter=require("./routes/supplier");
+const supplierRouter=require("./routes/stock");
 
 //Routers
 app.use("/service",serviceRouter)

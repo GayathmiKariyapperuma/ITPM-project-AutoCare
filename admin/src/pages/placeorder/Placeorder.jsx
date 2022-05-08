@@ -56,8 +56,8 @@ export default function Placeorder({search,setSearch}){
               </tr>
             </thead>
             <tbody>{orderdetails ?.reverse()
-                .filter((filteredservices) =>
-                    filteredservices.vnumber
+                .filter((filteredorders) =>
+                    filteredorders.vnumber
                     .toLowerCase()
                     .includes(search.toLowerCase())
                 ).map(renderClass)}</tbody>
