@@ -45,7 +45,7 @@ export default function Addsupplier() {
       agreementDate,
       validTime
     }
-    axios.post(`http://localhost:8070/supplier/addsupplier`, data)
+    axios.post(`http://localhost:8070/supplier/add`, data)
 
       .then(res => {
         alert("Supplier Added Successfully")
