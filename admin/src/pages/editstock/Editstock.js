@@ -16,8 +16,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Editstock() {
-  const [itemNo, setitemNo] = useState('');
   const [stockNo, setstockNo] = useState('');
+  const [itemNo, setitemNo] = useState('');
   const [itemName, setitemName] = useState('');
   const [category, setcategory] = useState('');
   const [brand, setbrand] = useState('');
@@ -36,8 +36,8 @@ export default function Editstock() {
     .then(res=> res.json())
     .then((result)=>{
       if(mounted){
-        setitemNo(result.itemNo)
-        setstockNo(result.stockNo)
+        setitemNo(result.stockNo)
+        setstockNo(result.itemNo)
         setitemName(result.itemName)
         setcategory(result.category)
         setbrand(result.brand)
@@ -55,7 +55,7 @@ export default function Editstock() {
   const fromhandler =(event)=>{
     const data ={itemNo,stockNo,itemName,category}
     
-    axios.put(`http://localhost:8070/stock/update/${itemNo}`,data)
+    axios.put(`http://localhost:8070/stock/update/${stockNo}`,data)
       .then(res=>{
         alert("Stock Updated Successfully");
         console.log(data);
@@ -69,8 +69,8 @@ return(
     <div className="newstaff">  
         <form className={classes.root} autoComplete="false" onSubmit={fromhandler}>
             <h1 className='topic'>Stock Update</h1>
-            <TextField InputProps={{readOnly: true,}} id="itemNo" name="itemNo" label="Enter Supplier's Number" className="size" variant="outlined"  value={itemNo} onChange={(e) => {setitemNo(e.target.value);}} required />
             <TextField InputProps={{readOnly: true,}} id="stockNo" name="stockNo" label="Enter Company Name" className="size" variant="outlined"  value={stockNo} onChange={(e) => {setstockNo(e.target.value);}} required />
+            <TextField InputProps={{readOnly: true,}} id="itemNo" name="itemNo" label="Enter Supplier's Number" className="size" variant="outlined"  value={itemNo} onChange={(e) => {setitemNo(e.target.value);}} required />
             <TextField id="itemName" name="itemName" label="Enter Comapny Address" className="size" variant="outlined"  value={itemName} onChange={(e) => {setitemName(e.target.value);}} required />
             <TextField id="category" name="category" label=" Enter Company Email" className="size" variant="outlined"  value={category} onChange={(e) => {setcategory(e.target.value);}} required />
             <TextField id="brand" name="brand" label=" Enter Brand" className="size" variant="outlined"  value={brand} onChange={(e) => {setbrand(e.target.value);}} required />
