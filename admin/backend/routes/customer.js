@@ -2,7 +2,7 @@ const router = require("express").Router();
 let Customer = require("../models/customer");
 let Vehicle = require("../models/vehicle");
 
-//customer
+//customer add
 router.route("/addcustomer").post((req,res)=>{
     
     const Firstname = req.body.Firstname;
@@ -34,7 +34,7 @@ router.route("/addcustomer").post((req,res)=>{
     })
 })
 
-//vehicle
+//vehicle add
 router.route("/addvehicle").post((req,res)=>{
     const NIC = req.body.NIC;
     const VehicleNo = req.body.VehicleNo;
@@ -62,7 +62,7 @@ router.route("/addvehicle").post((req,res)=>{
     })
 })
 
-
+//see all customer
 router.route("/").get((req,res)=>{
 
     Employee.find().then((employees)=>{
@@ -72,7 +72,10 @@ router.route("/").get((req,res)=>{
     })
 })
 
-router.route("/profile/:id").get((req,res)=>{
+
+
+//see specific customer
+router.route("/customer/:id").get((req,res)=>{
     let id = req.params.id;
 
     Employee.findById({_id:id}).then((employees)=>{
@@ -82,29 +85,33 @@ router.route("/profile/:id").get((req,res)=>{
     })
 })
 
-router.route("/update/:employeeno").put(async (req,res) => {
-    let no = req,params,employeeno;
 
-    const name = req.body.name;
-    const age = req.body.age;
-    const email = req.body.email;
+//update
+router.route("/update/:customerno").put(async (req,res) => {
+    let no = req,params,NIC;
+
+    const Phonenumber = req.body.Phonenumber;
+    const Address = req.body.Address;
+    const Email = req.body.Email;
 
     const updateEmployee = {
-        name,
-        age,
-        email
+        Phonenumber,
+        Address,
+        Email
     }
 
-    const update = await Employee.findByAndemployeenoupdate(employeeno, updateEmployee)
+    const update = await Customer.findByAndemployeenoupdate(employeeno, updateEmployee)
     .then(() => {
-    res.status(200).send({status: "Employee updated",no: update})
+    res.status(200).send({status: "Customer updated",no: update})
     }).catch((err)=> {
     console.log(err);
     res.status(500).send({status: "Error with updating data", error: err.message});
     })
 })
 
-router.route("/proflie/delete/:id").delete(async (req,res) => {
+
+//delete
+router.route("/customer/delete/:id").delete(async (req,res) => {
     let id = req.params.id;
 
     await Employee.findByIdAndDelete({_id:id})
@@ -116,18 +123,6 @@ router.route("/proflie/delete/:id").delete(async (req,res) => {
     })
 })
 
-router.route("/get/employeeno").get(async (req, res) => {
-    let no = req,params,employeeno;
-
-    const employee = await Employee.findByEmployee(employee)
-    .then(() => {
-        res.status(200).send({status: "Employee Fatched", employee: employee})
-    }).catch(() => {
-        console.log(err.message);
-        res.status(500).send({status: "Error with get Employee", error: err.mesage});
-
-    })
-})
 
 
 
