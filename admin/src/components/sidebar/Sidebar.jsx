@@ -49,6 +49,8 @@ export default function Sidebar() {
                 Add Vehicle
               </li>
             </Link>
+
+            <Link to="/viewmgt" className="link">
             <li className="sidebarListItem">
               <AttachMoney className="sidebarIcon" />
               Details
@@ -57,6 +59,7 @@ export default function Sidebar() {
               <BarChart className="sidebarIcon" />
               Reports
             </li>
+            </Link>
           </ul>
         </div>
         <div className="sidebarMenu">

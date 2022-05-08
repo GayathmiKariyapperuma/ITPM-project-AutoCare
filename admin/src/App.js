@@ -21,6 +21,7 @@ import Employeeallowance from "./pages/employeeallowance/Employeeallowance";
 import Employeepaysalary from "./pages/paysalary/Employeepaysalary";
 import Addcustomer from "./pages/addcustomer/Addcustomer";
 import Addvehicle from "./pages/addvehicle/Addvehicle";
+import Cusandveh from "./pages/cusandveh/cusandveh";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
@@ -113,6 +114,9 @@ function App() {
           <Addvehicle/>
           </Route>
 
+          <Route exact path="/viewmgt">
+          <Cusandveh/>
+          </Route>
           
        </Switch>
      </div>
