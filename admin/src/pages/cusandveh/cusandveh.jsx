@@ -11,7 +11,7 @@ export default function Cusandveh(){
                 <img className="icon" src={require(`./supplier.jpg`).default}/>
                     <h1 className="h3size">Customer Management</h1>
                     <div className="content123">
-                    <Link className='link' to={`/vieworder/Vieworder`}>
+                    <Link className='link' to={`/viewcustomer`}>
                         <a className="a">Click here</a>
                     </Link>
                     </div>
