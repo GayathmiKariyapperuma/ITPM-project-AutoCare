@@ -1,89 +1,76 @@
-import React,{useEffect, useState} from "react";
-import axios from "axios";
-import {Link} from "react-router-dom";
-/*import "./Editorder.css";*/
+import React,{ useState,useEffect } from "react";
+import "./Editorder.css"
+import { makeStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+import CloudUploadIcon from '@material-ui/icons/CloudUpload';
+
+import axios from 'axios';
+
+const useStyles = makeStyles((theme) => ({
+    root: {
+      '& .MuiTextField-root': {
+        margin: theme.spacing(2),
+      },
+    },
+  }));
 
 export default function Editorder(){
+    
+    const classes = useStyles();
 
-    const [vNo, setVNum] = useState("");
-    const [entryDate, setEDate] = useState("");
-    const [lsMileage, setLSMile] = useState("");
-    const [lsDate, setLSDate] = useState("");
+    const [orderNo,setorderNo] =useState('');
+    const [supplierNo,setsupplierNo] =useState('');
+    const [itemCodes,setitemCodes] =useState('');
+    const [orderDate,setorderDate] =useState('');
 
-    useEffect(() =>{
+      useEffect(()=>{
+        getUsers();
+      },[])
+
+      function getUsers(){
+        let mounted = true;
+        fetch(`http://localhost:8070/order/${orderNo}`)
+        .then(res=> res.json())
+        .then((result)=>{
+          if(mounted){
+            setorderNo(result.orderNo)
+            setsupplierNo(result.supplierNo)
+            setitemCodes(result.itemCodes)
+            setorderDate(result.orderDate)
+
+          }
+        })
+         return () => mounted = false;
+      }
+
+      const fromhandler =(event)=>{
+        const data ={orderNo,supplierNo,itemCodes,orderDate}
         
-        setVNum(localStorage.getItem('Vehicle Number'));
-        setEDate(localStorage.getItem('Entry Date'));
-        setLSMile(localStorage.getItem('Last Service Mileage'));
-        setLSDate(localStorage.getItem('Last Service Date'));
+        axios.put(`http://localhost:8070/supplier/update/${orderNo}`,data)
+          .then(res=>{
+            alert("Supplier Updated Successfully");
+            console.log(data);
+          })
+          .catch(err=>{
+            alert("Database Error");
+          })
+        }
 
-    }, [] );
-
-    const update = (e) => {
-        axios.put(`http://localhost:8070/order/update/${vNo}`, {
-       
-            vNo,
-            entryDate,
-            lsMileage,
-            lsDate
-
-        })
-        //window.location.reload(false);
-        window.location="/";
-    }
-
-    const search = (d) => {
-        axios.put(`http://localhost:8070/order/get/${vNo}`, {
-       
-            vNo,
-            entryDate,
-            lsMileage,
-            lsDate
-
-        })
-        //window.location.reload(false);
-        window.location="/";
-    }
-    
-      
     return(
-    <>
-    <div className="home">
-    <h1 className="heading">Stock Report</h1>
-    <form>
-        <div>
-            <form className="d-flex">
-                <input className="form-control me-1" type="text" id="vNo"minLength={12} maxLength={12} value={vNo}  placeholder="Enter Vehicle No" required 
-                onChange={(e)=>{setVNum(e.target.value);}}/>
-                <button class="btn1" type="submit" onClick={search}>Search</button>&nbsp;
-            </form>
+        <div className="newstaff">  
+            <form className={classes.root} autoComplete="false" onSubmit={fromhandler}>
+                <h1 className='topic'>Order Update</h1>
+                <TextField InputProps={{readOnly: true,}} id="orderNo" name="orderNo" label="Enter Supplier's Number" className="size" variant="outlined"  value={orderNo} onChange={(e) => {setorderNo(e.target.value);}} required />
+                <TextField InputProps={{readOnly: true,}} id="supplierNo" name="supplierNo" label="Enter Company Name" className="size" variant="outlined"  value={supplierNo} onChange={(e) => {setsupplierNo(e.target.value);}} required />
+                <TextField id="itemCodes" name="itemCodes" label="Enter Comapny Address" className="size" variant="outlined"  value={itemCodes} onChange={(e) => {setitemCodes(e.target.value);}} required />
+                <TextField id="orderDate" name="orderDate" label=" Enter Company Email" className="size" variant="outlined"  value={orderDate} onChange={(e) => {setorderDate(e.target.value);}} required />
+                <div className="go">
+                <Button type="submit" variant="contained" startIcon={<CloudUploadIcon />} className='btn'color="primary" > Submit </Button><br/><br/>
+                </div>
+                </form>
+
+                
         </div>
-        <br/><br/>
-        <div class="mb-3">
-                <label for="ls mileage" class="form-label">Last Service Mileage</label>
-                <input type="text" class="form-control" id="lsMile" value={lsMileage}
-                onChange={(e)=> {
-      
-                    setLSMile(e.target.value);
-      
-                }}/>
-            </div>
-       
-            <div class="mb-3">
-                <label for="ls date" class="form-label">Last Service Date</label>
-                <input type="text" class="form-control" id="lsDate" value={lsDate} 
-                onChange={(e)=> {
-      
-                    setLSDate(e.target.value);
-                }}/>
-            </div>
-            <center> 
-            <Link to={"/"}><button type="submit" class="btn" onClick={(d)=>{update(d);}}>UPDATE</button></Link>&nbsp;&nbsp;&nbsp;
-        </center>
-        </form>    
-    
-       </div>
-     
-     </>
     )
 }
