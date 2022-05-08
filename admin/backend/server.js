@@ -35,6 +35,7 @@ const serviceRouter=require("./routes/addservice");
 const employeeRouter = require("./routes/employee");
 const staffallowance=require("./routes/addallowance");
 const staffpaysalary=require("./routes/paysalary");
+const customer=require("./routes/customer");
 
 
 //Routers
@@ -43,6 +44,9 @@ app.use("/employee",employeeRouter);
 
 app.use("/staffallowance",staffallowance)
 app.use("/staffpaysalary",staffpaysalary)
+
+app.use("/customer",customer)
+
 
 //Run on port
 app.listen(PORT, () => {

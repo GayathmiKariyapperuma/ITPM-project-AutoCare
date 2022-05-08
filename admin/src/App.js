@@ -19,6 +19,8 @@ import Employeeprofile from "./pages/employee profile/Employee profile";
 import Updateemployee from "./pages/updateemployee/Updateenployee";
 import Employeeallowance from "./pages/employeeallowance/Employeeallowance";
 import Employeepaysalary from "./pages/paysalary/Employeepaysalary";
+import Addcustomer from "./pages/addcustomer/Addcustomer";
+import Addvehicle from "./pages/addvehicle/Addvehicle";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
@@ -102,6 +104,16 @@ function App() {
           <Employeepaysalary/>
           </Route>
 
+          {/* Customer & Vehicle Management */}
+          <Route exact path="/addcustomer">
+          <Addcustomer/>
+          </Route>
+
+          <Route exact path="/addvehicle">
+          <Addvehicle/>
+          </Route>
+
+          
        </Switch>
      </div>
     </Router>
