@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import './Addsupplier.css'
 import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
-import LoadingButton from '@material-ui/core/Button';
-import SendIcon from '@material-ui/icons/Send';
+import Button from '@material-ui/core/Button';
+import CloudUploadIcon from '@material-ui/icons/CloudUpload';
 import axios from 'axios';
 
 const useStyles = makeStyles((theme) => ({
@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Addsupplier() {
+export default function Editstock() {
   const [itemNo, setitemNo] = useState('');
   const [stockNo, setstockNo] = useState('');
   const [itemName, setitemName] = useState('');
