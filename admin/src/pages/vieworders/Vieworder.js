@@ -45,6 +45,11 @@ export default function Vieworder({search,setSearch}){
                 <Button size="small" color="primary" variant="outlined" >Edit</Button>
                 </Link>
             </td>
+            <td>
+            <Link className='link' to={`http://localhost/order/delete/:orderNo`}>
+                <Button size="small" color="primary" variant="outlined" >Delete</Button>
+                </Link>
+            </td>
           </tr>
         );
       };
