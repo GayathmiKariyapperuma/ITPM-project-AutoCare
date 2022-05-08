@@ -32,6 +32,13 @@ connection.once("open",() => {
 
 //Routers Connection
 const serviceRouter=require("./routes/addservice");
+const supplierRouter=require("./routes/supplier");
+const stockRouter=require("./routes/stock");
+
+//Routers
+app.use("/service",serviceRouter)
+app.use("/supplier",supplierRouter)
+app.use("/stock",stockRouter)
 const employeeRouter = require("./routes/employee");
 const staffallowance=require("./routes/addallowance");
 const staffpaysalary=require("./routes/paysalary");

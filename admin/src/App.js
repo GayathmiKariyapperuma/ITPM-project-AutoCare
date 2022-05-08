@@ -4,6 +4,14 @@ import './App.css';
 import { useState } from "react";
 import Home from "./pages/home/Home";
 import Addservice from "./pages/addservices/Addservices";
+import Addsupplier from "./pages/addsupplier/Addsupplier";
+import Addstock from "./pages/addstock/Addstock";
+import SDetails from "./pages/supplierdetails/SDetails";
+import Navigate from "./pages/reports/Navigate";
+import Vsupplier from "./pages/viewsupplier/Viewsupplier";
+import Vstock from "./pages/viewstock/Viewstock";
+import Sreport from "./pages/supplierreport/Sreport";
+import Ireport from "./pages/inventoryreport/Ireport";
 import Workprogress from "./pages/workprogess/Workprogress";
 import Pendingpage from "./pages/pending page/Pendingpage";
 import Inprogress from "./pages/Inprogress page/InprogressPage";
@@ -44,6 +52,32 @@ function App() {
          <Route exact path="/addservice">
           <Addservice/>
           </Route>
+
+
+          {/*Supplier and Inventory*/}
+         <Route exact path="/addsupplier">
+          <Addsupplier/>
+          </Route>
+          <Route exact path="/addstock">
+            <Addstock/>
+          </Route>
+          <Route exact path="/supplierdetails">
+            <SDetails/>
+          </Route>
+          <Route exact path="/viewsupplier/Viewsupplier">
+            <Vsupplier/>
+          </Route>
+          <Route exact path="/viewstock/Viewstock">
+            <Vstock/>
+          </Route>
+          <Route exact path="/reports">
+            <Navigate/>
+          </Route>
+          <Route exact path="/supplierreport/Sreport">
+            <Sreport/>
+          </Route>
+          <Route exact path="/inventoryreport/Ireport">
+            <Ireport/>
 
           <Route exact path="/workprogress">
           <Workprogress/>
