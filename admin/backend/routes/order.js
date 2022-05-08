@@ -50,16 +50,16 @@ router.route("/get/:orderNo").get(async(req, res)=>{
     })
 })
 
-//report
-router.route("/report/:date").get(async(req, res)=>{
-    let month = req.params.date;
-    const orderreport = await order.find({date:month})
-    .then((report)=>{
-        res.status(200).send({status: "Month fetched",report});
-    
-    }).catch((err)=>{
+//delete data
+router.route("/delete/:orderNo").delete(async (req,res) => {
+    let orderNum = req.params.orderNo;
+
+    await supplier.findOneAndDelete({orderNo:orderNum})
+    .then(() => {
+        res.status(200).send({status: "Order deleted"});
+    }).catch((err) => {
         console.log(err.message);
-        res.status(500).send({status: "Error with get Month", error: err.message});
+        res.status(500).send({status: "Error with delete]ing order", error: err.message});
     })
 })
 
