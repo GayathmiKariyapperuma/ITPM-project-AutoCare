@@ -45,9 +45,9 @@ const useStyles = makeStyles({
           </CardContent>
         </CardActionArea>
         <CardActions className='btn'>
-        <Link className='link' to={`/`}>
+        <Link className='link' to={`/supplierreport/Sreport`}>
           <Button color="primary" >
-            View All
+            View
           </Button>
           </Link>
         </CardActions>
@@ -68,7 +68,7 @@ const useStyles = makeStyles({
         <CardActions className='btn'>
         <Link className='link' to={`/`}>
           <Button color="primary" >
-            View All
+            View
           </Button>
           </Link>
         </CardActions>
