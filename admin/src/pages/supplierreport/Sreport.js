@@ -4,6 +4,7 @@ import {Link} from "react-router-dom";
 import jspdf from 'jspdf'
 import "jspdf-autotable"
 import Button from '@material-ui/core/Button';
+import './Sreport.css'
 
 export default function Sreport() {
 
@@ -54,7 +55,7 @@ export default function Sreport() {
 
     return (
     <div className="home">
-    <div className="downloadpdf">
+    <div className="downloadpdf"><br/>
     <Button color="primary" variant="contained" onClick={() => generatePDF(suppliers)}>Print Report</Button>
     </div>
     <h1 className="heading">Supplier Report</h1>
