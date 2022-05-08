@@ -12,22 +12,12 @@ export default function SDetails(){
                     <h1 className="h3size">Supplier Management</h1>
                     <div className="content123">
                     <Link className='link' to={`/editsupplier/Editsupplier`}>
-                        <a className="a123">View and Update Supplier Details</a>
-                    </Link>
-                    </div>
-                    <div className="content123">
-                    <Link className='link' to={`/editsupplier/Editsupplier`}>
-                        <a className="a123">Delete Supplier Details</a>
+                        <a className="a123">View Supplier Details</a>
                     </Link>
                     </div>
                     <div className="content123">
                     <Link className='link' to={`/editorder/Editorder`}>
-                        <a className="a">View and Update Orders</a>
-                    </Link>
-                    </div>
-                    <div className="content123">
-                    <Link className='link' to={`/editorder/Editorder`}>
-                        <a className="a">Delete Orders</a>
+                        <a className="a">View Orders</a>
                     </Link>
                     </div>
             </div>
@@ -40,12 +30,7 @@ export default function SDetails(){
                     <h1 className="h3size">Inventory Management</h1>
                     <div className="content123">
                     <Link className='link' to={`/editstock/Editstock`}>
-                        <a className="a">View and Update Stock</a>
-                    </Link>
-                    </div>
-                    <div className="content123">
-                    <Link className='link' to={`/editstock/Editstock`}>
-                        <a className="a">Delete Stock</a>
+                        <a className="a">View Stock</a>
                     </Link>
                     </div>
             </div>
