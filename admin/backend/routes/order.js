@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const { request } = require("express");
-let order = require("../models/order")
+let Order = require("../models/order")
 
 //add data
 router.route("/add").post((req, res)=>{
@@ -10,7 +10,7 @@ router.route("/add").post((req, res)=>{
      const itemCodes = req.body.itemCodes;
      const orderDate = req.body.orderDate;
 
-     const neworder = new order({
+     const neworder = new Order({
 
         orderNo,
         supplierNo,
@@ -30,7 +30,7 @@ router.route("/add").post((req, res)=>{
 //view all data
 router.route("/").get((req, res)=>{
 
-    order.find().then((orders)=>{
+    Order.find().then((orders)=>{
         res.json(orders)
     }).catch((err)=>{
         console.log(err)
