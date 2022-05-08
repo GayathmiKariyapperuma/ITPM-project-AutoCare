@@ -38,6 +38,19 @@ const postRoutes = require('./routes/posts');
 app.use("/service",serviceRouter)
 app.use(postRoutes);
 
+const employeeRouter = require("./routes/employee");
+const staffallowance=require("./routes/addallowance");
+const staffpaysalary=require("./routes/paysalary");
+
+
+//Routers
+app.use("/service",serviceRouter)
+app.use("/employee",employeeRouter);
+
+app.use("/staffallowance",staffallowance)
+app.use("/staffpaysalary",staffpaysalary)
+
+
 //Run on port
 app.listen(PORT, () => {
     console.log(`Server is up and running on port number : ${PORT}`)
