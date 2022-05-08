@@ -9,6 +9,7 @@ import Employeeprofile from "./pages/employee profile/Employee profile";
 import Updateemployee from "./pages/updateemployee/Updateenployee";
 import Employeeallowance from "./pages/employeeallowance/Employeeallowance";
 import Employeepaysalary from "./pages/paysalary/Employeepaysalary";
+import Ereportpage from "./pages/employee report page/Ereportpage";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
@@ -59,6 +60,11 @@ function App() {
           <Route exact path="/paysalary/:id">
           <Employeepaysalary/>
           </Route>
+
+          <Route exact path="/salary_report">
+          <Ereportpage setSearch={setSearch} search={search}/>
+          </Route>
+
 
        </Switch>
      </div>
