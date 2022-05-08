@@ -65,8 +65,8 @@ router.route("/addvehicle").post((req,res)=>{
 //see all customer
 router.route("/").get((req,res)=>{
 
-    Employee.find().then((employees)=>{
-        res.json(employees)
+    Customer.find().then((customer)=>{
+        res.json(customer)
     }).catch((err)=>{
         console.log(err)
     })
