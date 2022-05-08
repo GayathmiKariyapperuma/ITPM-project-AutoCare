@@ -1,47 +1,82 @@
-import React from "react";
-import "./Navigate.css"
-import {useParams } from 'react-router';
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import Card from '@material-ui/core/Card';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
 import { Link } from 'react-router-dom';
-import Stack from '@mui/material/Stack';
-import Button from '@mui/material/Button';
+import './Navigate.css'
 
-export default function SDetails(){
+
+const useStyles = makeStyles({
     
-    const {id}=useParams()
-
-    return(
-        <div className="home">
-            <div className="container1">
-            <div class="card123">
-                <img className="icon" src={require(`./supplier.jpg`).default}/>
-                    <h1 className="h3size">Supplier Management</h1>
-                    <div className="content123">
-                        {/*<Button variant="contained">Contained</Button>*/}
-                    <Link className='link' to={`/`}>
-                        <a className="a123">View Supplier Details</a>
-                    </Link>
-                    </div>
-                    <div className="content123">
-                    <Link className='link' to={`/`}>
-                        <a className="a">View Orders</a>
-                        </Link>
-                    </div>
+    root1: {
+      maxWidth: 345,
+      background: '#e0d8d880',
+      margin:'auto',
+    },
+    root2: {
+        maxWidth: 345,
+        background: '#ffb8007d',
+        margin:'auto',
+      }
+  });
+  
+  export default function Navigate() {
+    const classes = useStyles();
+  
+    return (
+        <div className='home' >
+        <h1 className="heading">View Reports</h1>
+        <div className='cards'>
+      <Card className={classes.root1}>
+        <div className='card'>
+        <CardActionArea>
+          <img component="img" alt="supplier" className='cardimg' width='100%' height="190" src={require(`./supplier.jpg`).default}/>   
+          <CardContent>
+            <div className='topic'>
+            <Typography  gutterBottom variant="h5" component="h2">
+                Supplier Management
+            </Typography>
             </div>
-            </div>
-            <br/>
-            <div className="left">
-            <div className="container1">
-            <div class="card123">
-                <img className="icon123" src={require(`./inventory.png`).default}/>
-                    <h1 className="h3size">Inventory Management</h1>
-                    <div className="content123">
-                    <Link className='link' to={`/`}>
-                        <a className="a">View Stock</a>
-                        </Link>
-                    </div>
-            </div>
-            </div>
-            </div>
+          </CardContent>
+        </CardActionArea>
+        <CardActions className='btn'>
+        <Link className='link' to={`/`}>
+          <Button color="primary" >
+            View All
+          </Button>
+          </Link>
+        </CardActions>
         </div>
-    )
-}
+      </Card>
+      <Card className={classes.root2}>
+        <div className='card'>
+        <CardActionArea>
+          <CardMedia component="img" alt="inventory" height="190" image={require(`./inventory.png`).default} title="done"/>
+          <CardContent>
+            <div className='topic'>
+            <Typography  gutterBottom variant="h5" component="h2">
+                Inventory Management
+            </Typography>
+            </div>
+          </CardContent>
+        </CardActionArea>
+        <CardActions className='btn'>
+        <Link className='link' to={`/`}>
+          <Button color="primary" >
+            View All
+          </Button>
+          </Link>
+        </CardActions>
+        </div>
+      </Card>
+      </div>
+      </div>
+      
+    );
+  }
+  
