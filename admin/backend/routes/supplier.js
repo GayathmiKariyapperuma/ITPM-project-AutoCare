@@ -2,7 +2,7 @@ const router = require("express").Router();
 let supplier = require("../models/supplier");
 
 //add data
-router.route("/addsupplier").post((req,res)=>{
+router.route("/add").post((req,res)=>{
 
     const supplierNo = req.body.supplierNo;
     const compName = req.body.compName;

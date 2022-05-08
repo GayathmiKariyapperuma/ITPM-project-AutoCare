@@ -33,12 +33,12 @@ connection.once("open",() => {
 //Routers Connection
 const serviceRouter=require("./routes/addservice");
 const supplierRouter=require("./routes/supplier");
-const supplierRouter=require("./routes/stock");
+const stockRouter=require("./routes/stock");
 
 //Routers
 app.use("/service",serviceRouter)
 app.use("/supplier",supplierRouter)
-app.use("/stock",supplierRouter)
+app.use("/stock",stockRouter)
 
 //Run on port
 app.listen(PORT, () => {
