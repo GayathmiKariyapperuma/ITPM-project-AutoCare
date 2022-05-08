@@ -30,7 +30,7 @@ export default function Editorder(){
 
       function getUsers(){
         let mounted = true;
-        fetch(`http://localhost:8070/order/${orderNo}`)
+        fetch(`http://localhost:8070/order/get/${orderNo}`)
         .then(res=> res.json())
         .then((result)=>{
           if(mounted){
@@ -47,7 +47,7 @@ export default function Editorder(){
       const fromhandler =(event)=>{
         const data ={orderNo,supplierNo,itemCodes,orderDate}
         
-        axios.put(`http://localhost:8070/supplier/update/${orderNo}`,data)
+        axios.put(`http://localhost:8070/order/update/${orderNo}`,data)
           .then(res=>{
             alert("Supplier Updated Successfully");
             console.log(data);
