@@ -108,7 +108,7 @@ function App() {
           </Route>
 
           <Route exact path="/salary_report">
-          <Ereportpage/>
+          <Ereportpage setSearch={setSearch} search={search}/>
           </Route>
 
           {/* Customer & Vehicle Management */}

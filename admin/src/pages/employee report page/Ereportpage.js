@@ -14,11 +14,9 @@ export default function Ereportpage({search,setSearch}){
 
   const [staffde, setstaffde] = useState([
     {
-      fname: "",
+      name: "",
       email: "",
       nic: "",
-      position: "",
-      type: "",
       allowance: "",
       basicsalary: "",
       date: "",
@@ -44,11 +42,9 @@ export default function Ereportpage({search,setSearch}){
   const renderClass = (staffde, index) => {
     return (
       <tr key={index}>
-        <td className="table-clo1">{staffde.fname}</td>
+        <td className="table-clo1">{staffde.name}</td>
         {/* <td>{staffde.email}</td> */}
         <td className="table-clo2">{staffde.nic}</td>
-        <td className="table-clo3">{staffde.type}</td>
-        <td className="table-clo4">{staffde.position}</td>
         <td className="table-clo5">Rs.{staffde.allowance}</td>
         <td className="table-clo6">Rs.{staffde.basicsalary}</td>
         <td className="table-clo7">{staffde.date}</td>
@@ -76,8 +72,6 @@ export default function Ereportpage({search,setSearch}){
                 <th>Empoolye Name</th>
                 {/* <th>Empoolye E-mail</th> */}
                 <th>Empoolye NIC</th>
-                <th>Empoolye Type</th>
-                <th>Empoolye Position</th>
                 <th>Empoolye Allowance</th>
                 <th>Empoolye Basicsalary</th>
                 <th>Empoolye Payment Date</th>
