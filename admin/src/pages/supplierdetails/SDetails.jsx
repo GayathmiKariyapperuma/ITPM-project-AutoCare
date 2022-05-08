@@ -1,13 +1,8 @@
 import React from "react";
 import "./SDetails.css"
-import {useParams } from 'react-router';
 import { Link } from 'react-router-dom';
-import Stack from '@mui/material/Stack';
-import Button from '@mui/material/Button';
 
 export default function SDetails(){
-    
-    const {id}=useParams()
 
     return(
         <div className="home">
