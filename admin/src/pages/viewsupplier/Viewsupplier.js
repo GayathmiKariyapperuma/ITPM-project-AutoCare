@@ -2,6 +2,7 @@ import React from 'react';
 import { useEffect,useState } from 'react';
 import axios from 'axios';
 import Button from '@material-ui/core/Button';
+import { Link } from 'react-router-dom';
 import "./Viewsupplier.css"
 
 
@@ -25,7 +26,7 @@ export default function Viewsupplier({search,setSearch}){
       useEffect(() => {
         function getdetails() {
           axios
-            .get("http://localhost:8070/supplier/get/${supplierNo}")
+            .get("http://localhost:8070/supplier/")
             .then((res) => {
             //   console.log(res);
               setsupplierdetails(res.data);
@@ -52,7 +53,9 @@ export default function Viewsupplier({search,setSearch}){
             <td className="table-clo6">{supplierdetails.agreementDate}</td>
             <td className="table-clo6">{supplierdetails.validTime}</td>
             <td>
-              
+            <Link className='link' to={`/editsupplier/Editsupplier`}>
+                <Button size="small" color="primary" variant="outlined" >Edit</Button>
+                </Link>
             </td>
           </tr>
         );
