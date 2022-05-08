@@ -1,0 +1,32 @@
+.home{
+    flex: 4;
+}
+.btn{
+    margin-left: 120px;
+}
+.btn{
+    margin-top: 55px;
+}
+.topic{
+    text-align: center;
+}
+.par{
+    text-align: center;
+}
+.card{
+    height: 400px;
+}
+.cards{
+    display: flex;
+    margin-top: 30px;
+}
+.cardimg{
+    object-fit:fill;
+}
+.heading{
+    margin-left: 25px;
+    color: rgba(255, 0, 0, 0.692);
+}
+.link{
+    text-decoration: none;
+  }

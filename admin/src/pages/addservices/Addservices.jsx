@@ -77,7 +77,7 @@ export default function Addservices() {
       await sleep(1e3); 
 
       if (active) {
-      fetch("http://localhost:8070/service/")
+      fetch("http://localhost:8070/service/customer")
       .then((response)=> response.json())
       .then((data)=>{
         setOptions(data);
@@ -109,7 +109,7 @@ React.useEffect(() => {
     await sleep(1e3); 
 
     if (active1) {
-    fetch("http://localhost:8070/service/")
+    fetch("http://localhost:8070/service/customer")
     .then((response)=> response.json())
     .then((data)=>{
       setOptions1(data);
@@ -132,12 +132,12 @@ React.useEffect(() => {
 // Send the data to search the textfield
 
 const fromhandler =(event)=>{
-    axios.get(`http://localhost:8070/service/addservice/${nic}/${fname}`)
+    axios.get(`http://localhost:8070/service/customer/${nic}/${fname}`)
     .then((res)=>{
       setsearch(true);
-      setvnumber(res.data.vnumber);
-      setcemail(res.data.cemail);
-      setcnumber(res.data.cnumber);
+      setvnumber(res.data.VehicleNo);
+      setcemail(res.data.Email);
+      setcnumber(res.data.Phonenumber);
       // alert("Service Add Successfully");
       console.log(res.data.vnumber);
       // console.log(nic);
@@ -215,7 +215,7 @@ function TransitionRight(props) {
       <h1 className="heading">Add Service </h1>
     <form ref={form} className={classes.root} >
       <div className="from">
-    <Autocomplete id="fname" className="size" sx={{ width: 300 }} open={open} onOpen={() => {setOpen(true); }} onClose={() => {setOpen(false);}} getOptionLabel={(option) => option.name} onChange={(e,value) => {setfname(value.name);} } 
+    <Autocomplete id="fname" className="size" sx={{ width: 300 }} open={open} onOpen={() => {setOpen(true); }} onClose={() => {setOpen(false);}} getOptionLabel={(option) => option.Firstname} onChange={(e,value) => {setfname(value.Firstname);} } 
       options={options} loading={loading}
       renderInput={(params) => (
         <TextField {...params}  label="Enter the Customer Name" value={fname} variant="outlined" name="fname"
@@ -229,7 +229,7 @@ function TransitionRight(props) {
         />
       )}
     />
-    <Autocomplete id="nic" name="nic" className="size2" sx={{ width: 300 }} open={open1} onOpen={() => {setOpen1(true); }} onClose={() => {setOpen1(false);}} getOptionLabel={(option1) => option1.nic} onChange={(e,value) => {setnic(value.nic);}}
+    <Autocomplete id="nic" name="nic" className="size2" sx={{ width: 300 }} open={open1} onOpen={() => {setOpen1(true); }} onClose={() => {setOpen1(false);}} getOptionLabel={(option1) => option1.NIC} onChange={(e,value) => {setnic(value.NIC);}}
       options={options1} loading={loading1}
       renderInput={(params) => (
         <TextField {...params} label="Enter the Customer NIC" value={nic} variant="outlined"
