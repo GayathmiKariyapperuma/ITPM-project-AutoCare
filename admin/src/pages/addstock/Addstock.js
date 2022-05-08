@@ -74,17 +74,6 @@ export default function Addstock() {
       </TextField>
         <TextField id="unitPrice" name="unitPrice" label="Unit Price" className="size" variant="outlined"  value={unitPrice} onChange={(e) => {setunitPrice(e.target.value);}} required />
         <TextField type="date" variant="outlined" label="Date" className="datebox" value={date} onChange={(e) => {setdate(e.target.value);}} required InputLabelProps={{shrink: true,}} />
-        {/*<LocalizationProvider dateAdapter={AdapterDateFns}>
-        <DesktopDatePicker
-          label="For desktop"
-          value={value}
-          minDate={new Date('2017-01-01')}
-          onChange={(newValue) => {
-            setValue(newValue);
-          }}
-          renderInput={(params) => <TextField {...params} />}
-        />
-        </LocalizationProvider>*/}
         <div className="add">  
         <LoadingButton  className="addbtn" color="primary" onClick={submithandler} endIcon={<SendIcon />} variant="contained">Submit</LoadingButton> 
         </div>
