@@ -3,7 +3,7 @@ const { request } = require("express");
 let stock = require("../models/stock")
 
 //add data
-router.route("/add").post((req, res)=>{
+router.route("/addstock").post((req, res)=>{
 
      const itemNo = req.body.itemNo;
      const stockNo = req.body.stockNo;

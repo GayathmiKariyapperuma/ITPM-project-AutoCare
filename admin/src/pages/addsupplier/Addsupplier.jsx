@@ -1,0 +1,94 @@
+import React, { useState } from "react";
+import './Addsupplier.css'
+import TextField from '@material-ui/core/TextField';
+import { makeStyles } from '@material-ui/core/styles';
+import LoadingButton from '@material-ui/core/Button';
+import SendIcon from '@material-ui/icons/Send';
+import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import axios from 'axios';
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    '& .MuiTextField-root': {
+      margin: theme.spacing(2),
+      display: theme.flex,
+    },
+  },
+}));
+
+export default function Addsupplier() {
+  const [supplierNo, setsupplierNo] = useState('');
+  const [compName, setcompName] = useState('');
+  const [compAddress, setcompAddress] = useState('');
+  const [compEmail, setcompEmail] = useState('');
+  const [compPhone, setcompPhone] = useState('');
+  const [agentName, setagentName] = useState('');
+  const [agentEmail, setagentEmail] = useState('');
+  const [agentPhone, setagentPhone] = useState('');
+  const [agreementDate, setagreementDate] = useState('');
+  const [validTime, setvalidTime] = useState('');
+  const [value, setValue] = React.useState(null);
+  const classes = useStyles();
+
+  const submithandler = (event) => {
+    event.preventDefault();
+    const data = {
+      supplierNo,
+      compName,
+      compAddress,
+      compEmail,
+      compPhone,
+      agentName,
+      agentEmail,
+      agentPhone,
+      agreementDate,
+      validTime
+    }
+    axios.post(`http://localhost:8070/supplier/addsupplier`, data)
+
+      .then(res => {
+        alert("Supplier Added Successfully")
+        console.log(data);
+      })
+      .catch(err => {
+        alert("Supplier Added Successfully");
+      })
+  }
+
+  return (
+    <div className="home">
+      <h1 className="heading">Add Supplier </h1>
+      <form className={classes.root}>
+        <TextField id="supplierNo" name="supplierNo" label="Supplier's Name" className="size" variant="outlined"  value={supplierNo} onChange={(e) => {setsupplierNo(e.target.value);}} required />
+        <TextField id="agentName" name="agentName" label="Agent Name" className="size" variant="outlined"  value={agentName} onChange={(e) => {setagentName(e.target.value);}} required />
+        <TextField id="compName" name="compName" label="Company Name" className="size" variant="outlined"  value={compName} onChange={(e) => {setcompName(e.target.value);}} required />
+        <TextField id="agentEmail" name="agentEmail" label="Agent Email" className="size" variant="outlined"  value={agentEmail} onChange={(e) => {setagentEmail(e.target.value);}} required />
+        <TextField id="compAddress" name="compAddress" label="Company Address" className="size" variant="outlined"  value={compAddress} onChange={(e) => {setcompAddress(e.target.value);}} required />
+        <TextField id="agentPhone" name="agentPhone" label="Agent Phone No" className="size" variant="outlined"  value={agentPhone} onChange={(e) => {setagentPhone(e.target.value);}} required />
+        <TextField id="compEmail" name="compEmail" label="Company Email" className="size" variant="outlined"  value={compEmail} onChange={(e) => {setcompEmail(e.target.value);}} required />
+        {/*<TextField id="agreementDate" name="agreementDate" label="Agreement Date" className="size" variant="outlined"  value={agreementDate} onChange={(e) => {setagreementDate(e.target.value);}} required />
+        <LocalizationProvider dateAdapter={AdapterDateFns}>
+          <DatePicker label="Basic example" value={value} onChange={(newValue) => { setValue(newValue); }} renderInput={(params) => <TextField {...params} />} />
+  </LocalizationProvider>*/}
+        <TextField id="compPhone" name="compPhone" label="Company Phone No" className="size" variant="outlined"  value={compPhone} onChange={(e) => {setcompPhone(e.target.value);}} required />
+        <TextField id="validTime" name="validTime" label="Valid Time Period" className="size" variant="outlined"  value={validTime} onChange={(e) => {setvalidTime(e.target.value);}} required />
+        <TextField type="date" variant="outlined" label="Agreement Date" className="datebox" value={agreementDate} onChange={(e) => {setagreementDate(e.target.value);}} required InputLabelProps={{shrink: true,}} />
+        <div className="add">  
+        <LoadingButton  className="addbtn" color="primary" onClick={submithandler} endIcon={<SendIcon />} variant="contained">Submit</LoadingButton> 
+        </div>
+      </form>
+
+      {/*<h1 className="heading">Item Details </h1>
+      <form className={classes.root}>
+        <TextField id="supplierNo" name="supplierNo" label="Supplier No" className="size" variant="outlined"  value={supplierNo} onChange={(e) => {setsupplierNo(e.target.value);}} required />
+        <TextField id="itemName" name="itemName" label="Item Name" className="size" variant="outlined"  value={itemName} onChange={(e) => {setitemName(e.target.value);}} required />
+        <TextField id="itemCode" name="itemCode" label="Item Code" className="size" variant="outlined"  value={itemCode} onChange={(e) => {setitem(e.target.value);}} required />
+        <div className="add">  
+        <LoadingButton  className="addbtn" color="primary" onClick={submithandler} endIcon={<SendIcon />} variant="contained">Submit</LoadingButton> 
+        </div>
+</form>*/}
+    </div>
+  )
+}

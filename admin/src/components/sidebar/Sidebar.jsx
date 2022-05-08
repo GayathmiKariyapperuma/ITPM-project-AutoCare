@@ -116,13 +116,13 @@ export default function Sidebar() {
               Add Supplier
             </li>
             </Link>
-            <Link to="/" className="link">
+            <Link to="/addstock" className="link">
             <li className="sidebarListItem">
               <Timeline className="sidebarIcon" />
               Add Stocks
             </li>
             </Link>
-            <Link to="/" className="link">
+            <Link to="/placeorder" className="link">
             <li className="sidebarListItem">
               <WorkOutline className="sidebarIcon" />
               Place Order

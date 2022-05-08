@@ -20,6 +20,13 @@
     margin-left: 25px;
     color: rgba(255, 0, 0, 0.445);
 }
+.search{
+    margin-left: 180px;
+}
+.searchbtn{
+    width: 500px;
+    margin-bottom: 25px;
+}
 .add{
     margin-left: 715px;
 }

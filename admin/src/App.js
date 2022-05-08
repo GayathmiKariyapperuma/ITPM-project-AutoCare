@@ -4,6 +4,8 @@ import './App.css';
 import Home from "./pages/home/Home";
 import Addservice from "./pages/addservices/Addservices";
 import Addsupplier from "./pages/addsupplier/Addsupplier";
+import Addstock from "./pages/addstock/Addstock";
+import Placeorder from "./pages/placeorder/Placeorder";
 import SDetails from "./pages/supplierdetails/SDetails";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -28,6 +30,12 @@ function App() {
           {/*Supplier and Inventory*/}
          <Route exact path="/addsupplier">
           <Addsupplier/>
+          </Route>
+          <Route exact path="/addstock">
+            <Addstock/>
+          </Route>
+          <Route exact path="/placeorder">
+            <Placeorder/>
           </Route>
           <Route exact path="/supplierdetails">
             <SDetails/>

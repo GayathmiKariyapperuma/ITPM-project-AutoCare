@@ -1,0 +1,93 @@
+.home{
+    flex: 4;
+}
+
+.container1{
+    z-index: 1;
+}
+
+.container1 .card123{
+    position: relative;
+    width: 900px;
+    height: 280px;
+    margin: 30px;
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    background: #0000001a;
+    overflow: hidden;
+    /* display: flex; */
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+}
+/*
+.container1 .card123 .content123{
+    padding: 20px;
+    transform: translateY(100px);*/
+    /* margin-top: 100px; *//*
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.container1 .card123:hover .content123{
+    transform: translateY(0px);
+    opacity: 1;
+}*/
+
+ .icon {
+    width: 225px;
+    position: absolute;
+    transform: translateY(60px);
+    opacity: 1;
+    align-self: start;
+    transition: 0.5s;
+    margin-left:25px;
+}
+
+.h3size{
+    margin-left: 30px;
+    margin-bottom: 10px;
+    margin-top: 15px;
+}
+
+.a123{
+    position: relative;
+    display: flex;
+    padding: 8px 20px;
+    margin-top: 15px;
+    margin-left: 300px;
+    background: #533ef299;
+    color: rgb(255, 255, 255);
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 500;
+    width: 150px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.icon123 {
+    width: 255px;
+    position: absolute;
+    transform: translateY(60px);
+    opacity: 1;
+    align-self: start;
+    transition: 0.5s;
+    margin-bottom: 240px;
+    margin-left: 25px;
+}
+
+.a{
+    position: relative;
+    display: flex;
+    padding: 10px 20px;
+    margin-top: 15px;
+    margin-left: 300px;
+    background: #533ef299;
+    color: rgb(255, 255, 255);
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 500;
+    width: 150px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}

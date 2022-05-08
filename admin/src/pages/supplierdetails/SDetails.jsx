@@ -1,46 +1,47 @@
-import * as React from 'react';
-import './SDetails.css';
-import Box from '@mui/material/Box';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
+import React from "react";
+import "./SDetails.css"
+import {useParams } from 'react-router';
+import { Link } from 'react-router-dom';
+import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
 
-const bull = (
-  <Box
-    component="span"
-    sx={{ display: 'inline-block', mx: '2px', transform: 'scale(0.8)' }}
-  >
-    •
-  </Box>
-);
+export default function SDetails(){
+    
+    const {id}=useParams()
 
-function SDetails() {
-  return (
-    <Card sx={{ minWidth: 275 }}>
-      <CardContent>
-        <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-          Word of the Day
-        </Typography>
-        <Typography variant="h5" component="div">
-          be{bull}nev{bull}o{bull}lent
-        </Typography>
-        <Typography sx={{ mb: 1.5 }} color="text.secondary">
-          adjective
-        </Typography>
-        <Typography variant="body2">
-          well meaning and kindly.
-          <br />
-          {'"a benevolent smile"'}
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <Button size="small">Learn More</Button>
-      </CardActions>
-    </Card>
-  );
+    return(
+        <div className="home">
+            <div className="container1">
+            <div class="card123">
+                <img className="icon" src={require(`./supplier.jpg`).default}/>
+                    <h1 className="h3size">Supplier Management</h1>
+                    <div className="content123">
+                        {/*<Button variant="contained">Contained</Button>*/}
+                    <Link className='link' to={`/`}>
+                        <a className="a123">View Supplier Details</a>
+                    </Link>
+                    </div>
+                    <div className="content123">
+                    <Link className='link' to={`/`}>
+                        <a className="a">View Orders</a>
+                        </Link>
+                    </div>
+            </div>
+            </div>
+            <br/>
+            <div className="left">
+            <div className="container1">
+            <div class="card123">
+                <img className="icon123" src={require(`./inventory.png`).default}/>
+                    <h1 className="h3size">Inventory Management</h1>
+                    <div className="content123">
+                    <Link className='link' to={`/`}>
+                        <a className="a">View Stock</a>
+                        </Link>
+                    </div>
+            </div>
+            </div>
+            </div>
+        </div>
+    )
 }
-
-
-export default SDetails;
