@@ -4,9 +4,9 @@ let stock = require("../models/stock")
 
 //add data
 router.route("/add").post((req, res)=>{
-
+    
+     const stockNo = req.body.stockNo; 
      const itemNo = req.body.itemNo;
-     const stockNo = req.body.stockNo;
      const category = req.body.category;
      const itemName = req.body.itemName;
      const brand = req.body.brand;
@@ -17,8 +17,8 @@ router.route("/add").post((req, res)=>{
 
      const newstock = new stock({
 
-        itemNo,
         stockNo,
+        itemNo,
         category,
         itemName,
         brand,
@@ -48,15 +48,28 @@ router.route("/").get((req, res)=>{
 })
 
 //search by stock No
-router.route("/get/:itemNo").get(async(req, res)=>{
+router.route("/get/:stockNo").get(async(req, res)=>{
     let stocknumber = req.params.stockNo;
     const stocknum = await stock.find({stockNo:stocknumber})
-    .then((count)=>{
-        res.status(200).send({status: "stock fetched",count});
+    .then((data)=>{
+        res.status(200).send({status: "stock fetched",data});
     
     }).catch((err)=>{
         console.log(err.message);
         res.status(500).send({status: "Error with get stock", error: err.message});
+    })
+})
+
+//delete data
+router.route("/delete/:stockNo").delete(async (req,res) => {
+    let userid = req.params.stockNo;
+
+    await stock.findOneAndDelete({stockNo:userid})
+    .then(() => {
+        res.status(200).send({status: "Stock delete"});
+    }).catch((err) => {
+        console.log(err.message);
+        res.status(500).send({status: "Error with deleting stock", error: err.message});
     })
 })
 

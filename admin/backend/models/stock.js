@@ -4,12 +4,12 @@ const mongoose = require('mongoose');
 
  const add_stock = new Schema({
 
-    itemNo : {
+    stockNo : {
         type : String,
         required : true
     },
 
-    stockNo : {
+    itemNo : {
         type : String,
         required : true
     },
