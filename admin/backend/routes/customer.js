@@ -72,6 +72,17 @@ router.route("/").get((req,res)=>{
     })
 })
 
+//see all customer
+router.route("/vehicle/").get((req,res)=>{
+
+    Vehicle.find().then((customer)=>{
+        res.json(customer)
+    }).catch((err)=>{
+        console.log(err)
+    })
+})
+
+
 
 
 //see specific customer
@@ -114,7 +125,7 @@ router.route("/update/:customerno").put(async (req,res) => {
 router.route("/customer/delete/:id").delete(async (req,res) => {
     let id = req.params.id;
 
-    await Employee.findByIdAndDelete({_id:id})
+    await Customer.findByIdAndDelete({_id:id})
     .then(() => {
         res.status(200).send({status: "Employee Deleted"});
     }).catch((err) => {
