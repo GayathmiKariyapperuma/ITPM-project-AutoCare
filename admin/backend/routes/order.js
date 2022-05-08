@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const { request } = require("express");
-let Order = require("../models/order")
+let order = require("../models/order")
 
 //add data
 router.route("/add").post((req, res)=>{
@@ -10,7 +10,7 @@ router.route("/add").post((req, res)=>{
      const itemCodes = req.body.itemCodes;
      const orderDate = req.body.orderDate;
 
-     const neworder = new Order({
+     const neworder = new order({
 
         orderNo,
         supplierNo,
@@ -30,36 +30,10 @@ router.route("/add").post((req, res)=>{
 //view all data
 router.route("/").get((req, res)=>{
 
-    Order.find().then((orders)=>{
+    order.find().then((orders)=>{
         res.json(orders)
     }).catch((err)=>{
         console.log(err)
-    })
-})
-
-//search by item No
-router.route("/get/:orderNo").get(async(req, res)=>{
-    let itemnum = req.params.orderNo;
-    const getAvailability = await availability.find({orderNo:itemnum})
-    .then((count)=>{
-        res.status(200).send({status: "item fetched",count});
-    
-    }).catch((err)=>{
-        console.log(err.message);
-        res.status(500).send({status: "Error with get item", error: err.message});
-    })
-})
-
-//delete data
-router.route("/delete/:orderNo").delete(async (req,res) => {
-    let orderNum = req.params.orderNo;
-
-    await supplier.findOneAndDelete({orderNo:orderNum})
-    .then(() => {
-        res.status(200).send({status: "Order deleted"});
-    }).catch((err) => {
-        console.log(err.message);
-        res.status(500).send({status: "Error with delete]ing order", error: err.message});
     })
 })
 
