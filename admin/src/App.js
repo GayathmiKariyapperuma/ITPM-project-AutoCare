@@ -8,6 +8,7 @@ import Addstock from "./pages/addstock/Addstock";
 import Placeorder from "./pages/placeorder/Placeorder";
 import SDetails from "./pages/supplierdetails/SDetails";
 import Navigate from "./pages/reports/Navigate";
+import Vsupplier from "./pages/viewsupplier/Viewsupplier";
 import Sreport from "./pages/supplierreport/Sreport";
 import Ireport from "./pages/inventoryreport/Ireport";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -42,6 +43,9 @@ function App() {
           </Route>
           <Route exact path="/supplierdetails">
             <SDetails/>
+          </Route>
+          <Route exact path="/viewsupplier/Viewsupplier">
+            <Vsupplier/>
           </Route>
           <Route exact path="/reports">
             <Navigate/>
