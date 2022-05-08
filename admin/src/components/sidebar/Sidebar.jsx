@@ -36,14 +36,14 @@ export default function Sidebar() {
         <div className="sidebarMenu">
           <h3 className="sidebarTitle">Customer & Vehicle Management</h3>
           <ul className="sidebarList">
-            <Link to="/" className="link">
+            <Link to="/addcustomer" className="link">
               <li className="sidebarListItem">
                 <PermIdentity className="sidebarIcon" />
                 Add Customer
               </li>
             </Link>
 
-            <Link to="/" className="link">
+            <Link to="/addvehicle" className="link">
               <li className="sidebarListItem">
                 <Storefront className="sidebarIcon" />
                 Add Vehicle

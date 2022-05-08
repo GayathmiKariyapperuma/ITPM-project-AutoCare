@@ -32,15 +32,10 @@ connection.once("open",() => {
 
 //Routers Connection
 const serviceRouter=require("./routes/addservice");
-const postRoutes = require('./routes/posts');
-
-//Routers
-app.use("/service",serviceRouter)
-app.use(postRoutes);
-
 const employeeRouter = require("./routes/employee");
 const staffallowance=require("./routes/addallowance");
 const staffpaysalary=require("./routes/paysalary");
+const customer=require("./routes/customer");
 
 
 //Routers
@@ -49,6 +44,8 @@ app.use("/employee",employeeRouter);
 
 app.use("/staffallowance",staffallowance)
 app.use("/staffpaysalary",staffpaysalary)
+
+app.use("/customer",customer)
 
 
 //Run on port
