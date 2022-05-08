@@ -5,10 +5,10 @@ import Home from "./pages/home/Home";
 import Addservice from "./pages/addservices/Addservices";
 import Addsupplier from "./pages/addsupplier/Addsupplier";
 import Addstock from "./pages/addstock/Addstock";
-import Placeorder from "./pages/placeorder/Placeorder";
 import SDetails from "./pages/supplierdetails/SDetails";
 import Navigate from "./pages/reports/Navigate";
 import Vsupplier from "./pages/viewsupplier/Viewsupplier";
+import Vstock from "./pages/viewstock/Viewstock";
 import Sreport from "./pages/supplierreport/Sreport";
 import Ireport from "./pages/inventoryreport/Ireport";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -38,17 +38,17 @@ function App() {
           <Route exact path="/addstock">
             <Addstock/>
           </Route>
-          <Route exact path="/placeorder">
-            <Placeorder/>
-          </Route>
           <Route exact path="/supplierdetails">
             <SDetails/>
           </Route>
-          <Route exact path="/viewsupplier/Viewsupplier">
+          <Route exact path="/viewsupplier">
             <Vsupplier/>
           </Route>
           <Route exact path="/reports">
             <Navigate/>
+          </Route>
+          <Route exact path="/viewstock">
+            <Vstock/>
           </Route>
           <Route exact path="/supplierreport/Sreport">
             <Sreport/>
