@@ -57,7 +57,7 @@ export default function Addsupplier() {
     <div className="home">
       <h1 className="heading">Add Supplier </h1>
       <form className={classes.root}>
-        <TextField id="supplierNo" name="supplierNo" label="Supplier's Name" className="size" variant="outlined"  value={supplierNo} onChange={(e) => {setsupplierNo(e.target.value);}} required />
+        <TextField id="supplierNo" name="supplierNo" label="Supplier's Number" className="size" variant="outlined"  value={supplierNo} onChange={(e) => {setsupplierNo(e.target.value);}} required />
         <TextField id="agentName" name="agentName" label="Agent Name" className="size" variant="outlined"  value={agentName} onChange={(e) => {setagentName(e.target.value);}} required />
         <TextField id="compName" name="compName" label="Company Name" className="size" variant="outlined"  value={compName} onChange={(e) => {setcompName(e.target.value);}} required />
         <TextField id="agentEmail" name="agentEmail" label="Agent Email" className="size" variant="outlined"  value={agentEmail} onChange={(e) => {setagentEmail(e.target.value);}} required />
