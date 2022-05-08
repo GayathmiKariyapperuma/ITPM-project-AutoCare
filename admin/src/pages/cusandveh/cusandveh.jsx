@@ -24,7 +24,7 @@ export default function Cusandveh(){
                 <img className="icon123" src={require(`./veh1.JPG`).default}/>
                     <h1 className="h3size">Vehicle Management</h1>
                     <div className="content123">
-                    <Link className='link' to={`/viewstock/Viewstock`}>
+                    <Link className='link' to={`/viewvehicle`}>
                         <a className="a">Click here</a>
                     </Link>
                     </div>

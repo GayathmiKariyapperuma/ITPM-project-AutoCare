@@ -31,7 +31,8 @@ import Ereportpage from "./pages/employee report page/Ereportpage";
 import Addcustomer from "./pages/addcustomer/Addcustomer";
 import Addvehicle from "./pages/addvehicle/Addvehicle";
 import Cusandveh from "./pages/cusandveh/cusandveh";
-import Viewcustomer from "./pages/view customer/Viewcustomer";
+import Viewcustomer from "./pages/viewcustomer/viewcustomer";
+import Viewvehicle from "./pages/viewvehicle/viewvehicle";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
@@ -159,7 +160,11 @@ function App() {
           </Route>
           
           <Route exact path="/viewcustomer">
-          <Viewcustomer/>
+          <Viewcustomer setSearch={setSearch} search={search}/>
+          </Route>
+
+          <Route exact path="/viewvehicle">
+          <Viewvehicle setSearch={setSearch} search={search}/>
           </Route>
 
        </Switch>
