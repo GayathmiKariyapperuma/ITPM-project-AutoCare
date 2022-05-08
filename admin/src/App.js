@@ -7,6 +7,7 @@ import Addsupplier from "./pages/addsupplier/Addsupplier";
 import Addstock from "./pages/addstock/Addstock";
 import Placeorder from "./pages/placeorder/Placeorder";
 import SDetails from "./pages/supplierdetails/SDetails";
+import Navigate from "./pages/reports/Navigate";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
@@ -39,6 +40,9 @@ function App() {
           </Route>
           <Route exact path="/supplierdetails">
             <SDetails/>
+          </Route>
+          <Route exact path="/reports">
+            <Navigate/>
           </Route>
 
        </Switch>

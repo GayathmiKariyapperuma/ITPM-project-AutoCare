@@ -134,7 +134,7 @@ export default function Sidebar() {
               Details
             </li>
             </Link>
-            <Link to="/" className="link">
+            <Link to="/reports" className="link">
             <li className="sidebarListItem">
               <BarChart className="sidebarIcon" />
               Reports
